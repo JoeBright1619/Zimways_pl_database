@@ -17,6 +17,7 @@ CREATE OR REPLACE PACKAGE BODY audit_pkg AS
         p_status  VARCHAR2,
         p_message VARCHAR2
     ) IS
+    PRAGMA AUTONOMOUS_TRANSACTION;  
     BEGIN
         INSERT INTO Item_Audit_Log (
             user_id,
@@ -31,6 +32,7 @@ CREATE OR REPLACE PACKAGE BODY audit_pkg AS
             p_status,
             p_message
         );
+        COMMIT;  
     END log_item_action;
 END audit_pkg;
 

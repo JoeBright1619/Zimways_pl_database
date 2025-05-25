@@ -106,6 +106,16 @@ COMPOUND TRIGGER
 END item_security_audit_trg;
 ```
 
+**Security in Action**:
+
+1. **Normal Operation (Allowed)**
+   ![DML Operation with Authorization](screenshots/1_auditing.PNG)
+   *Successful DML operation on Item table with proper authorization and audit logging*
+
+2. **Holiday Restriction**
+   ![Holiday Restriction Enforcement](screenshots/2_auditing.PNG)
+   *System blocking DML operations after adding current date as a holiday, with audit trail*
+
 **Key Features**:
 - Compound trigger structure for efficient processing
 - Real-time weekday and holiday validation
